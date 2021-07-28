@@ -40,8 +40,8 @@
         MoveScaled(41,0,22,4)
       }
       { RadioButtonhora CheckBox
-        MoveScaled(66,1,18,3)
-        Text = ("hora: 08:00:00")
+        MoveScaled(64,1,9,3)
+        Text = ("hora:")
       }
       { Labelversion Label
         MoveScaled(98,1,19,2)
@@ -49,6 +49,10 @@
       { ButtonLimpiar Button
         MoveScaled(86,2,8,6)
         Picture = Picture["icon:/22/clear"]
+      }
+      { TextBoxHora TextBox
+        MoveScaled(73,1,11,3)
+        Text = ("08:00:00")
       }
     }
     { Splitter1 Splitter

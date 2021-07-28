@@ -1,6 +1,6 @@
 ' Gambas class file
 
-Public lineas As String[]
+Public lineas As New String[]
 
 Public Sub Form_Open()
 
@@ -86,7 +86,7 @@ Public Sub ButtonOperar_Click()
 
   For a = 1 To lineas.count - 1
     If RadioButtonhora.Value = True Then
-      Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " 08:00:00"
+      Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " " & TextBoxHora.text
     Else
       Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
 

@@ -1,3 +1,6 @@
+* Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.3
+- se puede indicar hora concreta (y no las 08:00:00)  si no viene en la columna de fecha
+
 * Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.2
 - icono y boton de limpiar datos
 
