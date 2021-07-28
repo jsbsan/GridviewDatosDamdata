@@ -1,0 +1,137 @@
+' Gambas class file
+
+Public lineas As String[]
+
+Public Sub Form_Open()
+
+  Me.center
+  Labelversion.text = "Version: " & Application.Version
+
+End
+
+Public Sub Splitter1_Resize()
+
+End
+
+Public Sub ButtonPegarDatos_Click()
+
+  Dim CONTENIDO As String
+
+  Dim a As Integer
+  Dim l As String
+  Dim contador As Integer
+  Dim token As String[]
+
+  limpiar()
+
+  If Clipboard.Text = 1 Then
+    contenido = Clipboard.Paste("text/plain")
+    LINEAS = Split(CONTENIDO, "\n")
+    Print LINEAS.count
+    contador = -1
+    For Each l In lineas
+      token = Split(l, "\t")
+
+      If contador = -1 Then
+        'cabecera
+        'redefino gridviewOrigen
+        gridviewOrigen.Columns.Count = token.count
+        gridviewOrigen.rows.Count = lineas.Count
+        gridviewOrigen.Columns.Width = 150
+        gridviewOrigen.Border = 2
+        gridviewOrigen.Header = 3
+        For a = 0 To token.Count - 1
+          gridviewOrigen.Columns[a].title = a + 1
+          gridviewOrigen.Columns[a].Alignment = Align.Center
+        Next
+      Endif
+      contador += 1
+      'relleno datos
+      For a = 0 To token.count - 1
+        gridviewOrigen[contador, a].Text = token[a]
+      Next
+
+    Next
+
+  Endif
+
+  TextBoxColumnaSENSOR.TEXT = gridviewOrigen[2, 1].Text
+
+End
+
+Public Sub ButtonOperar_Click()
+
+  Dim FechaAnterior As String
+  Dim a As Integer
+  Dim contadorfecha As Integer
+  Dim contadorlinea As Integer
+  Dim valorAcumulado As Float
+  'cogo la columna 1 y 2, creo una con el nombre del sensor, y pongo el dato de la columna indicada
+  With GridViewDestino
+    .Clear()
+    .columns.Count = 3
+    .Header = 3
+
+    .Columns[0].title = "fecha"
+    .Columns[1].title = "sensor"
+    .columns[2].title = "dato"
+    .Border = 2
+    .rows.Count = lineas.Count - 1
+    .Columns.Width = 100
+  End With
+
+  GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
+  GridViewDestino[0, 1].Text = TextBoxColumnaSENSOR.Text
+  GridViewDestino[0, 2].Text = GridViewOrigen[0, Val(TextBoxColumnaDatos.Text) - 1].text
+
+  For a = 1 To lineas.count - 1
+    If RadioButtonhora.Value = True Then
+      Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " 08:00:00"
+    Else
+      Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
+
+    Endif
+
+    Try GridViewDestino[a, 1].Text = TextBoxColumnaSENSOR.Text
+    Try GridViewDestino[a, 2].Text = GridViewOrigen[a, Val(TextBoxColumnaDatos.Text) - 1].text
+
+  Next
+  ButtonGenerar_Click()
+
+End
+
+Public Sub ButtonGenerar_Click()
+
+  Dim a As Integer
+  Dim lineas As String
+  Dim contenido As String
+  'ENMPIEZO EN LA 2º LINEA (PARA NO COGER CABECERAS)
+  For a = 1 To GridViewDestino.rows.count - 1
+    lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";" & GridViewDestino[a, 2].text & gb.CrLf 'for windows
+    contenido &= lineas
+
+  Next
+
+  Clipboard.Copy(contenido)
+
+  File.Save(User.home & "/PDF/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
+
+  Message.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
+
+End
+
+Public Sub ButtonLimpiar_Click()
+
+  limpiar()
+
+End
+
+Public Sub limpiar()
+
+  TextBoxColumnaDatos.Text = ""
+  TextBoxColumnaSENSOR.text = ""
+  gridviewOrigen.Clear()
+  GridViewDestino.Clear()
+  lineas.Clear()
+
+End

@@ -1,0 +1,65 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,144,87)
+  Icon = Picture["icono.png"]
+  Arrangement = Arrange.Fill
+  { VBox1 VBox
+    MoveScaled(2,5,130,59)
+    { Panel1 Panel
+      MoveScaled(0,0,120,10)
+      { ButtonPegarDatos Button
+        MoveScaled(0,2,21,5)
+        Text = ("Pegar Datos")
+        Picture = Picture["icon:/22/paste"]
+      }
+      { ButtonGenerar Button
+        MoveScaled(98,5,21,4)
+        Visible = False
+        Text = ("Generar .csv")
+        Picture = Picture["icon:/22/office-calc"]
+      }
+      { TextBoxColumnaDatos TextBox
+        MoveScaled(41,5,22,4)
+        Text = ("3")
+      }
+      { Label1 Label
+        MoveScaled(25,5,15,4)
+        Text = ("Columna Datos:")
+      }
+      { ButtonOperar Button
+        MoveScaled(66,5,13,4)
+        Text = ("operar")
+        Picture = Picture["icon:/22/exec"]
+      }
+      { Label2 Label
+        MoveScaled(24,0,15,4)
+        Text = ("Nombre Sensor:")
+      }
+      { TextBoxColumnaSENSOR TextBox
+        MoveScaled(41,0,22,4)
+      }
+      { RadioButtonhora CheckBox
+        MoveScaled(66,1,18,3)
+        Text = ("hora: 08:00:00")
+      }
+      { Labelversion Label
+        MoveScaled(98,1,19,2)
+      }
+      { ButtonLimpiar Button
+        MoveScaled(86,2,8,6)
+        Picture = Picture["icon:/22/clear"]
+      }
+    }
+    { Splitter1 Splitter
+      MoveScaled(2,11,119,53)
+      Expand = True
+      { GridViewOrigen GridView
+        MoveScaled(2,4,33,31)
+      }
+      { GridViewDestino GridView
+        MoveScaled(40,2,33,31)
+      }
+    }
+  }
+}

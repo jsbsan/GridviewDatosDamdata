@@ -1,0 +1,24 @@
+# Gambas Project File 3.0
+Title=GridviewDatosDamdata
+Startup=FMain
+Icon=icono.png
+Version=0.0.2
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Description="Copia datos del portapapeles en formato columna de datos y selecionando columna crea otro fichero con la columna seleccionada"
+Authors="Julio Sánchez Berro"
+TabSize=2
+Language=en_US
+Maintainer=jsbsan
+Address=jusabejusabe@gmail.com
+Url=https://jsbsan.blogspot.com/
+License=General Public License
+PackageName=gridviewdatosdamdata-0.0.2
+PackageVersion=3
+CreateEachDirectory=1
+Packager=1
+Systems=debian
+Menus=debian:"Applications/Accessibility"
+Categories=debian:"Accessibility"
+Groups=debian:"admin"
