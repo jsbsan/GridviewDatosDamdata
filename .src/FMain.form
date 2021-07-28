@@ -60,6 +60,7 @@
       Expand = True
       { GridViewOrigen GridView
         MoveScaled(2,4,33,31)
+        ToolTip = ("haz doble click sobre una celda y el valor pasara al Nombre Sensor")
       }
       { GridViewDestino GridView
         MoveScaled(40,2,33,31)

@@ -1,3 +1,6 @@
+* Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.4
+- Mejora: Al hacer click en una celda se pasa el valor al textbox del nombre del sensor
+
 * Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.3
 - se puede indicar hora concreta (y no las 08:00:00)  si no viene en la columna de fecha
 

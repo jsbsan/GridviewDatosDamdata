@@ -77,7 +77,7 @@ Public Sub ButtonOperar_Click()
     .columns[2].title = "dato"
     .Border = 2
     .rows.Count = lineas.Count - 1
-    .Columns.Width = 100
+    .Columns.Width = 150
   End With
 
   GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
@@ -133,5 +133,11 @@ Public Sub limpiar()
   gridviewOrigen.Clear()
   GridViewDestino.Clear()
   lineas.Clear()
+
+End
+
+Public Sub GridViewOrigen_DblClick()
+
+  TextBoxColumnaSENSOR.Text = Trim(gridviewOrigen[gridviewOrigen.Row, gridviewOrigen.Column].text)
 
 End
