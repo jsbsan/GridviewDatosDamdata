@@ -7,14 +7,14 @@
   { VBox1 VBox
     MoveScaled(2,5,130,59)
     { Panel1 Panel
-      MoveScaled(0,0,120,10)
+      MoveScaled(0,0,129,10)
       { ButtonPegarDatos Button
         MoveScaled(0,2,21,5)
         Text = ("Pegar Datos")
         Picture = Picture["icon:/22/paste"]
       }
       { ButtonGenerar Button
-        MoveScaled(98,5,21,4)
+        MoveScaled(110,6,21,2)
         Visible = False
         Text = ("Generar .csv")
         Picture = Picture["icon:/22/office-calc"]
@@ -28,7 +28,7 @@
         Text = ("Columna Datos:")
       }
       { ButtonOperar Button
-        MoveScaled(66,5,13,4)
+        MoveScaled(84,5,13,4)
         Text = ("operar")
         Picture = Picture["icon:/22/exec"]
       }
@@ -44,15 +44,25 @@
         Text = ("hora:")
       }
       { Labelversion Label
-        MoveScaled(98,1,19,2)
+        MoveScaled(96,1,19,2)
       }
       { ButtonLimpiar Button
-        MoveScaled(86,2,8,6)
+        MoveScaled(99,3,8,6)
         Picture = Picture["icon:/22/clear"]
       }
       { TextBoxHora TextBox
         MoveScaled(73,1,11,3)
         Text = ("08:00:00")
+      }
+      { ButtonScript Button
+        MoveScaled(110,3,21,2)
+        Visible = False
+        Text = ("Script de Columnas")
+      }
+      { CheckBoxCabecera CheckBox
+        MoveScaled(64,6,18,3)
+        Text = ("Con Cabecera")
+        Value = CheckBox.True
       }
     }
     { Splitter1 Splitter
@@ -60,10 +70,14 @@
       Expand = True
       { GridViewOrigen GridView
         MoveScaled(2,4,33,31)
-        ToolTip = ("haz doble click sobre una celda y el valor pasara al Nombre Sensor")
+        ToolTip = ("Haz click y si es texto pasa a Nombre Sensor y si es numero pasa  el nº de columna a Columna Datos")
       }
       { GridViewDestino GridView
         MoveScaled(40,2,33,31)
+      }
+      { TextAreaSalida TextArea
+        MoveScaled(74,3,22,30)
+        Visible = False
       }
     }
   }

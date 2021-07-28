@@ -1,0 +1,21 @@
+' Gambas class file
+
+Public Sub Form_Open()
+
+  Me.Center()
+
+End
+
+Public Sub info(texto As String)
+
+  Timer1.Start
+  Label1.Text = texto
+  Me.Show()
+
+End
+
+Public Sub Timer1_Timer()
+
+  Me.Close()
+
+End

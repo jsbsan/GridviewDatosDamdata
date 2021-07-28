@@ -1,3 +1,6 @@
+* Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.5
+- distingo si los datos tienen o no cabeceras
+
 * Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.4
 - Mejora: Al hacer click en una celda se pasa el valor al textbox del nombre del sensor
 

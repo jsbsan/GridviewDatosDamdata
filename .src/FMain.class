@@ -23,7 +23,7 @@ Public Sub ButtonPegarDatos_Click()
   Dim token As String[]
 
   limpiar()
-
+  TextAreaSalida.Visible = False
   If Clipboard.Text = 1 Then
     contenido = Clipboard.Paste("text/plain")
     LINEAS = Split(CONTENIDO, "\n")
@@ -34,6 +34,8 @@ Public Sub ButtonPegarDatos_Click()
 
       If contador = -1 Then
         'cabecera
+        gridviewOrigen.rows.Count = lineas.Count
+
         'redefino gridviewOrigen
         gridviewOrigen.Columns.Count = token.count
         gridviewOrigen.rows.Count = lineas.Count
@@ -44,6 +46,7 @@ Public Sub ButtonPegarDatos_Click()
           gridviewOrigen.Columns[a].title = a + 1
           gridviewOrigen.Columns[a].Alignment = Align.Center
         Next
+
       Endif
       contador += 1
       'relleno datos
@@ -55,7 +58,7 @@ Public Sub ButtonPegarDatos_Click()
 
   Endif
 
-  TextBoxColumnaSENSOR.TEXT = gridviewOrigen[2, 1].Text
+  Try TextBoxColumnaSENSOR.TEXT = gridviewOrigen[2, 1].Text
 
 End
 
@@ -66,6 +69,12 @@ Public Sub ButtonOperar_Click()
   Dim contadorfecha As Integer
   Dim contadorlinea As Integer
   Dim valorAcumulado As Float
+
+  If TextBoxColumnaDatos.Text = "" Then
+    Message.Error("No esta indicada la columna de datos")
+    Return
+  Endif
+
   'cogo la columna 1 y 2, creo una con el nombre del sensor, y pongo el dato de la columna indicada
   With GridViewDestino
     .Clear()
@@ -105,8 +114,18 @@ Public Sub ButtonGenerar_Click()
   Dim a As Integer
   Dim lineas As String
   Dim contenido As String
-  'ENMPIEZO EN LA 2º LINEA (PARA NO COGER CABECERAS)
-  For a = 1 To GridViewDestino.rows.count - 1
+  Dim iniciardatos As Integer
+
+  'ENMPIEZO EN LA 1º LINEA -> las cabeceras ya estan eliminadas segun checkbox
+
+  If CheckBoxCabecera.value Then
+    'hay cabecera, se la quito
+    iniciardatos = 1
+  Else
+    iniciardatos = 0
+  Endif
+
+  For a = iniciardatos To GridViewDestino.rows.count - 1
     lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";" & GridViewDestino[a, 2].text & gb.CrLf 'for windows
     contenido &= lineas
 
@@ -114,9 +133,12 @@ Public Sub ButtonGenerar_Click()
 
   Clipboard.Copy(contenido)
 
+  TextAreaSalida.Visible = True
+  TextAreaSalida.Text = contenido
+
   File.Save(User.home & "/PDF/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
 
-  Message.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
+  Message2.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
 
 End
 
@@ -138,6 +160,23 @@ End
 
 Public Sub GridViewOrigen_DblClick()
 
-  TextBoxColumnaSENSOR.Text = Trim(gridviewOrigen[gridviewOrigen.Row, gridviewOrigen.Column].text)
+  Dim celdacontiene As String
+
+  Try celdacontiene = gridviewOrigen[gridviewOrigen.Row, gridviewOrigen.Column].Text
+
+  If Not IsNull(Val(celdacontiene)) Then
+    TextBoxColumnaDatos.Text = gridviewOrigen.Column + 1
+
+  Else
+    Try TextBoxColumnaSENSOR.Text = celdacontiene
+  Endif
+
+  '    Clipboard.Copy(TextBoxColumnaSENSOR.Text)
+
+End
+
+Public Sub ButtonScript_Click()
+
+  FormScript.Show()
 
 End

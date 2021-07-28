@@ -1,0 +1,13 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { TextArea1 TextArea
+    MoveScaled(2,3,52,54)
+    Text = ("FECHA,\nSENSOR,\nCOLUMNA,")
+  }
+  { ButtonEjecutar Button
+    MoveScaled(51,59,12,4)
+    Text = ("EJECUTAR")
+  }
+}

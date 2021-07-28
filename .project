@@ -2,7 +2,7 @@
 Title=GridviewDatosDamdata
 Startup=FMain
 Icon=icono.png
-Version=0.0.4
+Version=0.0.5
 Component=gb.image
 Component=gb.gui
 Component=gb.form
@@ -14,7 +14,7 @@ Maintainer=jsbsan
 Address=jusabejusabe@gmail.com
 Url=https://jsbsan.blogspot.com/
 License=General Public License
-PackageName=gridviewdatosdamdata-0.0.4
+PackageName=gridviewdatosdamdata-0.0.5
 PackageVersion=3
 CreateEachDirectory=1
 Packager=1
