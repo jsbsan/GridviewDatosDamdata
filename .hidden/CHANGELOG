@@ -1,3 +1,16 @@
+* Sat Jul 31 2021 jsbsan <jusabejusabe@gmail.com> 0.0.7
+- agregado capacidad de realizar script, para cuando hay muchas columnas y hay que operar con ellas
+
+* Thu Jul 29 2021 jsbsan <jusabejusabe@gmail.com> 0.0.6
+- instalador deb
+
+* Thu Jul 29 2021 jsbsan <jusabejusabe@gmail.com> 0.0.6
+- bug corregodio cuando columna a exportar es igual "" entonces pongo valor 0
+
+* Thu Jul 29 2021 jsbsan <jusabejusabe@gmail.com> 0.0.6
+- 'Si el dato esta de la celda importada esta vacio, pongo el dato del la fila anterior
+- 'si la columna de datos es 0, pongo valor="" en la celda a exportar
+
 * Wed Jul 28 2021 jsbsan <jusabejusabe@gmail.com> 0.0.5
 - distingo si los datos tienen o no cabeceras
 

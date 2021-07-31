@@ -1,5 +1,61 @@
 ' Gambas class file
 
-Public Sub TextArea1_KeyPress()
+Public formularioPrincipal As Object
+
+Public Sub TextAreaSCRIPT_KeyPress()
+
+End
+
+Public Sub ButtonEjecutar_Click()
+
+  Dim COMANDO As String[]
+  Dim TOKEN As String[]
+  Dim C As String
+
+  'ejecutar
+  comando = Split(TextAreaSCRIPT.text, "\n")
+
+  For Each c In comando
+    token = Split(c, ",")
+    If token.count = 2 Then
+      ejecutar(token[0], token[1])
+    Endif
+    If token.count = 1 Then
+      'orden de operar
+      ejecutar(token[0], "")
+    Endif
+
+  Next
+
+End
+
+Public Sub ejecutar(lugar As String, valor As String)
+
+  lugar = Upper(LUGAR)
+  Select Case lugar
+    Case Upper("TextBoxColumnaSENSOR")
+      formularioPrincipal.TextBoxColumnaSENSOR.text = valor
+
+    Case Upper("TextBoxColumnaDatos")
+      formularioPrincipal.TextBoxColumnaDatos.text = valor
+
+    Case Upper("CheckButtonhora")
+      formularioPrincipal.CheckButtonhora.Value = If(Mid$(Upper(valor), 1, 1) = "T", True, False)
+
+    Case Upper("CheckBoxCabecera")
+      formularioPrincipal.CheckBoxCabecera.Value = If(Mid$(Upper(valor), 1, 1) = "T", True, False)
+
+    Case Upper("TextBoxHora")
+      formularioPrincipal.TextBoxHora.text = valor
+
+    Case Upper("ButtonOperar_click()")
+      formularioPrincipal.ButtonOperar_Click()
+      Wait 5'espero unos segundos despues de realizar calculos
+
+  End Select
+
+End
+
+Public Sub Form_Open()
 
 End

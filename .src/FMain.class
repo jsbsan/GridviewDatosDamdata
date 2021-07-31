@@ -51,7 +51,12 @@ Public Sub ButtonPegarDatos_Click()
       contador += 1
       'relleno datos
       For a = 0 To token.count - 1
-        gridviewOrigen[contador, a].Text = token[a]
+        'Si el dato esta vacio, pongo el dato del la fila anterior
+        If token[a] <> "" Then
+          gridviewOrigen[contador, a].Text = token[a]
+        Else
+          gridviewOrigen[contador, a].Text = gridviewOrigen[contador - 1, a].Text
+        Endif
       Next
 
     Next
@@ -71,8 +76,7 @@ Public Sub ButtonOperar_Click()
   Dim valorAcumulado As Float
 
   If TextBoxColumnaDatos.Text = "" Then
-    Message.Error("No esta indicada la columna de datos")
-    Return
+    TextBoxColumnaDatos.Text = "0"
   Endif
 
   'cogo la columna 1 y 2, creo una con el nombre del sensor, y pongo el dato de la columna indicada
@@ -91,10 +95,15 @@ Public Sub ButtonOperar_Click()
 
   GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
   GridViewDestino[0, 1].Text = TextBoxColumnaSENSOR.Text
-  GridViewDestino[0, 2].Text = GridViewOrigen[0, Val(TextBoxColumnaDatos.Text) - 1].text
+
+  If Val(TextBoxColumnaDatos.Text) - 1 = -1 Then
+    GridViewDestino[0, 2].Text = ""
+  Else
+    GridViewDestino[0, 2].Text = GridViewOrigen[0, Val(TextBoxColumnaDatos.Text) - 1].text
+  Endif
 
   For a = 1 To lineas.count - 1
-    If RadioButtonhora.Value = True Then
+    If CheckButtonhora.Value = True Then
       Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " " & TextBoxHora.text
     Else
       Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
@@ -102,8 +111,13 @@ Public Sub ButtonOperar_Click()
     Endif
 
     Try GridViewDestino[a, 1].Text = TextBoxColumnaSENSOR.Text
-    Try GridViewDestino[a, 2].Text = GridViewOrigen[a, Val(TextBoxColumnaDatos.Text) - 1].text
 
+    'en caso de columna valor 0, quedaria en valor -1 el textboxColumna datos, y se pondria valor ="" (seria una columna sin datos a recalcular DAMDATA)
+    If Val(TextBoxColumnaDatos.Text) - 1 = -1 Then
+      Try GridViewDestino[a, 2].Text = ""
+    Else
+      Try GridViewDestino[a, 2].Text = GridViewOrigen[a, Val(TextBoxColumnaDatos.Text) - 1].text
+    Endif
   Next
   ButtonGenerar_Click()
 
@@ -176,7 +190,7 @@ Public Sub GridViewOrigen_DblClick()
 End
 
 Public Sub ButtonScript_Click()
-
+  FormScript.formularioPrincipal = Me
   FormScript.Show()
 
 End

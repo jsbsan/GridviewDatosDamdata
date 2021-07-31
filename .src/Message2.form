@@ -3,7 +3,8 @@
 { Form Form
   MoveScaled(0,0,63,20)
   { Label1 Label
-    MoveScaled(1,1,61,13)
+    MoveScaled(1,1,61,18)
+    Background = &H1BE01B&
   }
   { Timer1 #Timer
     #MoveScaled(-1,12)

@@ -19,16 +19,19 @@
         Text = ("Generar .csv")
         Picture = Picture["icon:/22/office-calc"]
       }
-      { TextBoxColumnaDatos TextBox
+      { !TextBoxColumnaDatos TextBox
         MoveScaled(41,5,22,4)
+        #Public = True
+        ToolTip = ("Si pone 0, pongo columna con valor cadena vacia")
         Text = ("3")
       }
       { Label1 Label
         MoveScaled(25,5,15,4)
         Text = ("Columna Datos:")
       }
-      { ButtonOperar Button
+      { !ButtonOperar Button
         MoveScaled(84,5,13,4)
+        #Public = True
         Text = ("operar")
         Picture = Picture["icon:/22/exec"]
       }
@@ -36,11 +39,13 @@
         MoveScaled(24,0,15,4)
         Text = ("Nombre Sensor:")
       }
-      { TextBoxColumnaSENSOR TextBox
+      { !TextBoxColumnaSENSOR TextBox
         MoveScaled(41,0,22,4)
+        #Public = True
       }
-      { RadioButtonhora CheckBox
+      { !CheckButtonhora CheckBox
         MoveScaled(64,1,9,3)
+        #Public = True
         Text = ("hora:")
       }
       { Labelversion Label
@@ -55,12 +60,12 @@
         Text = ("08:00:00")
       }
       { ButtonScript Button
-        MoveScaled(110,3,21,2)
-        Visible = False
+        MoveScaled(110,2,21,3)
         Text = ("Script de Columnas")
       }
-      { CheckBoxCabecera CheckBox
+      { !CheckBoxCabecera CheckBox
         MoveScaled(64,6,18,3)
+        #Public = True
         Text = ("Con Cabecera")
         Value = CheckBox.True
       }
