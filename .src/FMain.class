@@ -93,7 +93,15 @@ Public Sub ButtonOperar_Click()
     .Columns.Width = 150
   End With
 
-  GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
+  'PONGO FECHA Y HORA (DEPENDE DEL VALOR DEL CheckButtonhora.Value
+  If CheckButtonhora.Value = True Then
+    Try GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text & " " & TextBoxHora.text
+  Else
+    Try GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
+
+  Endif
+
+  'PONGO NOMBRE DE SENSOR
   GridViewDestino[0, 1].Text = TextBoxColumnaSENSOR.Text
 
   If Val(TextBoxColumnaDatos.Text) - 1 = -1 Then
@@ -147,6 +155,13 @@ Public Sub ButtonGenerar_Click()
 
   Clipboard.Copy(contenido)
 
+  'SISTEMA DE REEMPLAZO PARA DATOS PROVENIENTES DEL SAIH, años 2018, 2019,2020,2021
+  contenido = Replace(contenido, "/21 ", "/2021 ")
+  contenido = Replace(contenido, "/20 ", "/2020 ")
+  contenido = Replace(contenido, "/19 ", "/2019 ")
+  contenido = Replace(contenido, "/18 ", "/2018 ")
+
+  'muestro datos de salida generado
   TextAreaSalida.Visible = True
   TextAreaSalida.Text = contenido
 
@@ -190,6 +205,7 @@ Public Sub GridViewOrigen_DblClick()
 End
 
 Public Sub ButtonScript_Click()
+
   FormScript.formularioPrincipal = Me
   FormScript.Show()
 

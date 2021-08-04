@@ -1,3 +1,9 @@
+* Wed Aug 04 2021 jsbsan <jusabejusabe@gmail.com> 0.0.9
+- muestra en el formulario el resultado final de los datos seleccionados, incluso el cambio de formato de fecha de año
+
+* Wed Aug 04 2021 jsbsan <jusabejusabe@gmail.com> 0.0.8
+- convierte datos formato /21 a /2021 (tambien con /18, /19,/20
+
 * Sat Jul 31 2021 jsbsan <jusabejusabe@gmail.com> 0.0.7
 - agregado capacidad de realizar script, para cuando hay muchas columnas y hay que operar con ellas
 
