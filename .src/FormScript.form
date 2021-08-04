@@ -2,13 +2,13 @@
 
 { Form Form
   MoveScaled(0,0,131,49)
-  Icon = Picture["icono.png"]
+  Icon = Picture["icono aplicacion.png"]
   { TextAreaSCRIPT TextArea
     MoveScaled(1,1,60,47)
     Text = ("TextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()\n")
   }
   { ButtonEjecutar Button
-    MoveScaled(84,41,24,4)
+    MoveScaled(105,36,24,4)
     Text = ("EJECUTAR SCRIPT")
     Picture = Picture["icon:/22/jump"]
   }
@@ -17,5 +17,16 @@
     Background = Color.Background
     Text = ("Ayuda\n\nPrimero se introduce el control, luego la coma, y luego el valor.\nSi es un check se puede poner \"T\" para indicar activado\n\nLista:\nTextBoxColumnaSENSOR -> nombre del sensor\nTextBoxColumnaDatos -> columna de datos (0 para dejar en blanco)\nCheckButtonhora (si hay que añadir la hora: valor T activado)\nCheckBoxCabecera (si hay que tienen los datos cabecera: valor T activado)\nTextBoxHora: valor de la hora. Normalmente 08:00:00\nButtonOperar_click() -> realiza operación\nCada vez que se hage Opera, se espera 5 segundos para continuar el script.")
     ReadOnly = True
+  }
+  { ButtonRecuperarScript Button
+    MoveScaled(63,36,28,4)
+    Text = ("Recuperar Script Anterior")
+    Picture = Picture["icon:/22/start"]
+  }
+  { ButtonReiniciarContenido Button
+    MoveScaled(63,43,28,4)
+    Tag = "TextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()"
+    Text = ("Reiniciar contenido")
+    Picture = Picture["icon:/22/refresh"]
   }
 }

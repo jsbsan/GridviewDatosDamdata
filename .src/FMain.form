@@ -2,7 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,144,87)
-  Icon = Picture["icono.png"]
+  Icon = Picture["icono aplicacion.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox
     MoveScaled(2,5,130,59)

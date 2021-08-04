@@ -27,6 +27,8 @@ Public Sub ButtonEjecutar_Click()
 
   Next
 
+  Settings["scriptAnterior"] = TextAreaSCRIPT.text
+
 End
 
 Public Sub ejecutar(lugar As String, valor As String)
@@ -57,5 +59,17 @@ Public Sub ejecutar(lugar As String, valor As String)
 End
 
 Public Sub Form_Open()
+
+End
+
+Public Sub ButtonRecuperarScript_Click()
+
+  TextAreaSCRIPT.Text = settings["scriptAnterior", ""]
+
+End
+
+Public Sub ButtonReiniciarContenido_Click()
+
+  TextAreaSCRIPT.Text = ButtonReiniciarContenido.tag
 
 End

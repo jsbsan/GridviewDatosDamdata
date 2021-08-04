@@ -1,3 +1,6 @@
+* Wed Aug 04 2021 jsbsan <jusabejusabe@gmail.com> 0.0.10
+- botones para recuperar el anterior script usado y reiniciar el valor del textareaScript
+
 * Wed Aug 04 2021 jsbsan <jusabejusabe@gmail.com> 0.0.9
 - muestra en el formulario el resultado final de los datos seleccionados, incluso el cambio de formato de fecha de año
 
