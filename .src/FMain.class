@@ -200,7 +200,7 @@ Public Sub GridViewOrigen_DblClick()
     Try TextBoxColumnaSENSOR.Text = celdacontiene
   Endif
 
-  '    Clipboard.Copy(TextBoxColumnaSENSOR.Text)
+  Clipboard.Copy(TextBoxColumnaSENSOR.Text)
 
 End
 

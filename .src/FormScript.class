@@ -48,6 +48,7 @@ Public Sub ejecutar(lugar As String, valor As String)
       formularioPrincipal.CheckBoxCabecera.Value = If(Mid$(Upper(valor), 1, 1) = "T", True, False)
 
     Case Upper("TextBoxHora")
+      If valor = "" Then valor = "08:00:00"
       formularioPrincipal.TextBoxHora.text = valor
 
     Case Upper("ButtonOperar_click()")
@@ -60,6 +61,8 @@ End
 
 Public Sub Form_Open()
 
+  Settings.Read(Me)
+
 End
 
 Public Sub ButtonRecuperarScript_Click()
@@ -71,5 +74,11 @@ End
 Public Sub ButtonReiniciarContenido_Click()
 
   TextAreaSCRIPT.Text = ButtonReiniciarContenido.tag
+
+End
+
+Public Sub Form_Close()
+
+  Settings.Write(Me)
 
 End

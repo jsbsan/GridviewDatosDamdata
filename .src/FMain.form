@@ -67,7 +67,6 @@
         MoveScaled(64,6,18,3)
         #Public = True
         Text = ("Con Cabecera")
-        Value = CheckBox.True
       }
     }
     { Splitter1 Splitter
