@@ -5,16 +5,16 @@
   Icon = Picture["icono aplicacion.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox
-    MoveScaled(2,5,130,59)
+    MoveScaled(2,5,141,59)
     { Panel1 Panel
-      MoveScaled(0,0,129,10)
+      MoveScaled(0,0,141,10)
       { ButtonPegarDatos Button
         MoveScaled(0,2,21,5)
         Text = ("Pegar Datos")
         Picture = Picture["icon:/22/paste"]
       }
       { ButtonGenerar Button
-        MoveScaled(110,6,21,2)
+        MoveScaled(117,7,21,2)
         Visible = False
         Text = ("Generar .csv")
         Picture = Picture["icon:/22/office-calc"]
@@ -30,7 +30,7 @@
         Text = ("Columna Datos:")
       }
       { !ButtonOperar Button
-        MoveScaled(84,5,13,4)
+        MoveScaled(84,5,15,4)
         #Public = True
         Text = ("operar")
         Picture = Picture["icon:/22/exec"]
@@ -49,10 +49,11 @@
         Text = ("hora:")
       }
       { Labelversion Label
-        MoveScaled(96,1,19,2)
+        MoveScaled(85,2,14,2)
       }
       { ButtonLimpiar Button
-        MoveScaled(99,3,8,6)
+        MoveScaled(100,1,12,8)
+        Text = ("limpiar")
         Picture = Picture["icon:/22/clear"]
       }
       { TextBoxHora TextBox
@@ -60,8 +61,9 @@
         Text = ("08:00:00")
       }
       { ButtonScript Button
-        MoveScaled(110,2,21,3)
+        MoveScaled(113,1,27,8)
         Text = ("Script de Columnas")
+        Picture = Picture["script.png"]
       }
       { !CheckBoxCabecera CheckBox
         MoveScaled(64,6,18,3)
