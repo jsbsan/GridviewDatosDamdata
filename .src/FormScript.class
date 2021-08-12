@@ -82,3 +82,25 @@ Public Sub Form_Close()
   Settings.Write(Me)
 
 End
+
+Public Sub ButtonGenerarScript_Click()
+
+  Dim GridViewDATOS As GridView
+  Dim A As Integer
+
+  GridViewDATOS = formularioPrincipal.GridViewOrigen
+  'la 1º columna tiene fecha
+
+  'empiezo en la 2º columna
+  TextAreaSCRIPT.Text = ""
+  For a = 1 To (GridViewDATOS.Columns.Count - 1) Step 2
+    TextAreaSCRIPT.Text &= "------------" & "\n"
+    TextAreaSCRIPT.Text &= "TextBoxColumnaSENSOR," & GridViewDATOS[1, a].text & "\n"
+    TextAreaSCRIPT.Text &= "TextBoxColumnaDatos," & Str(A + 2) & "\n"
+    TextAreaSCRIPT.Text &= "CheckButtonhora," & If(CheckBoxHORA.VALUE, "T", "F") & "\n"
+    TextAreaSCRIPT.Text &= "CheckBoxCabecera," & If(CheckBoxcABECERA.VALUE, "T", "F") & "\n"
+    TextAreaSCRIPT.Text &= "TextBoxHora," & "\n"
+    TextAreaSCRIPT.Text &= "ButtonOperar_click()" & "\n"
+  Next
+
+End

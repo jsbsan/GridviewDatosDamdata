@@ -17,6 +17,7 @@
     Background = Color.Background
     Text = ("Ayuda\n\nPrimero se introduce el control, luego la coma, y luego el valor.\nSi es un check se puede poner \"T\" para indicar activado\n\nLista:\nTextBoxColumnaSENSOR -> nombre del sensor\nTextBoxColumnaDatos -> columna de datos (0 para dejar en blanco)\nCheckButtonhora (si hay que añadir la hora: valor T activado)\nCheckBoxCabecera (si hay que tienen los datos cabecera: valor T activado)\nTextBoxHora: valor de la hora. Normalmente 08:00:00\nButtonOperar_click() -> realiza operación\nCada vez que se hage Opera, se espera 5 segundos para continuar el script.")
     ReadOnly = True
+    Wrap = True
   }
   { ButtonRecuperarScript Button
     MoveScaled(92,36,28,4)
@@ -28,5 +29,31 @@
     Tag = "TextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()"
     Text = ("Reiniciar contenido")
     Picture = Picture["icon:/22/refresh"]
+  }
+  { Frame1 Frame
+    MoveScaled(93,48,65,39)
+    Text = ("Generador de Script")
+    { ButtonGenerarScript Button
+      MoveScaled(2,4,28,6)
+      Font = Font["-2"]
+      Text = ("Generar Script Automaticamente")
+      Picture = Picture["icon:/22/bicycle"]
+    }
+    { TextAreaaYUDA2 TextArea
+      MoveScaled(1,12,49,26)
+      Background = Color.Background
+      Text = ("Script automatico\nSe genera automaticamente, teniendo en cuenta:\n1º la primera columna tiene la fecha\ny las sucesivas columnas:\nel nombre del sensor\nel dato que da el sensor\n\nCreaando el script para todas las columnas que tenga el gridview de datos.\n")
+      ReadOnly = True
+      Wrap = True
+    }
+    { CheckBoxHORA CheckBox
+      MoveScaled(36,4,25,3)
+      Text = ("chechbuttonhora")
+      Value = CheckBox.True
+    }
+    { CheckBoxcABECERA CheckBox
+      MoveScaled(36,8,25,3)
+      Text = ("checkBoxCabecera")
+    }
   }
 }
