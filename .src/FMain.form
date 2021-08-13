@@ -63,7 +63,7 @@
       { ButtonScript Button
         MoveScaled(113,1,27,8)
         Text = ("Script de Columnas")
-        Picture = Picture["script.png"]
+        Picture = Picture["script ICONO.png"]
       }
       { !CheckBoxCabecera CheckBox
         MoveScaled(64,6,18,3)

@@ -2,7 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,159,91)
-  Icon = Picture["script.png"]
+  Icon = Picture["script ICONO.png"]
   { TextAreaSCRIPT TextArea
     MoveScaled(1,1,90,89)
     Text = ("------------------comentario-------------------\nTextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()\n------------------comentario-------------------\n\n")
