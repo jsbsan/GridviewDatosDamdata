@@ -56,4 +56,9 @@
       Text = ("checkBoxCabecera")
     }
   }
+  { LabelProceso Label
+    MoveScaled(134,41,24,4)
+    Alignment = Align.Center
+    Text = ("  ")
+  }
 }

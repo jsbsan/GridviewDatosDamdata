@@ -11,6 +11,7 @@ Public Sub ButtonEjecutar_Click()
   Dim COMANDO As String[]
   Dim TOKEN As String[]
   Dim C As String
+  Dim contador As Integer
 
   'ejecutar
   comando = Split(TextAreaSCRIPT.text, "\n")
@@ -24,10 +25,13 @@ Public Sub ButtonEjecutar_Click()
       'orden de operar
       ejecutar(token[0], "")
     Endif
-
+    contador += 1
+    LabelProceso.Text = Str$(contador) & " de " & Str$(comando.Count)
   Next
 
   Settings["scriptAnterior"] = TextAreaSCRIPT.text
+  Message.Info("El script ha terminado de ejecutarse" & "\n" & "Ejecutadas: " & Str$(contador - 1) & " lineas de comandos")
+  LabelProceso.Text = ""
 
 End
 
