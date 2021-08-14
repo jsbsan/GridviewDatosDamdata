@@ -1,0 +1,9 @@
+' Gambas module file
+
+Public Function espar(a As Integer) As Boolean
+
+  If Round(a / 2, 0) * 2 = a Then Return True 'es par
+
+  Return False
+
+End

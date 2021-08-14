@@ -1,3 +1,6 @@
+* Sat Aug 14 2021 jsbsan <jusabejusabe@gmail.com> 0.0.21
+- pegar datos con la primera fila el nombre del sensor y mejora del fichero readme.md
+
 * Fri Aug 13 2021 jsbsan <jusabejusabe@gmail.com> 0.0.18
 - mejora en tgraduccion de fecha, quito quiones y pongo  barra invertida, quito espacio de datos, mensaje finalizacion de script
 
