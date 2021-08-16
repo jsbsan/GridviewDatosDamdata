@@ -14,14 +14,11 @@ La primera columna contendrá la fecha, no importa que tenga incluida la hora, y
 
 ![Datos con columna de nombre de sensor!](ayuda/DatosSinColumnasSensores.png "figura 1.a")
 
-
 1.b) En la siguiente captura, se muestra datos donde hay columnas con nombre de sensores:
 ![Datos con columna de nombre de sensor!](ayuda/DatosConColumnadeNombreSensor.png "figura 1.b")
 
-
 2) Dependiendo de como tengamos los datos en la hoja de cálculo, usaremos el botón "Pegar Sin Columnas Sensores"
 ![Pegar datos con columna de nombre de sensor!](ayuda/PegarSinColumnasSensores.png), los datos los tendríamos con muestra la figura (1.a)
-
 
  o el botón "Pegar Datos"![Pegar datos con columna de nombre de sensor!](ayuda/PegarDatosConColumnadeNombreSensor.png) , para pegar los datos. (1.b)
 
@@ -59,7 +56,6 @@ El gridview ![Datos Operar!](ayuda/DOS.png)son los datos del sensor que hemos ex
 
 El ![Datos Operar!](ayuda/TRES.png)es el contenido del fichero .csv resultante.
 
-
 y se genera en el directorio /home/usuario/PDF, el fichero de datos .csv con el nombre del textbox "Nombre Sensor":
 
 ![Fichero Generado!](ayuda/ficheroCsvGenerado.png)
@@ -69,6 +65,8 @@ Que podrá ser importado a DAMDATA.
 #### EXTRA: Herramienta SCRIPT
 
 Con el botón SCRIPT ![Script Columnas](ayuda/ScriptColumnas.png), se abre un formulario más avanzado, donde podemos automatizar el proceso de crear ficheros .csv cuando hemos cargado muchas columnas de datos de sensores, permitiendo la creación automática de múltiples ficheros .csv.
+
+[![video tutorial usando script](https://img.youtube.com/vi/104T2j7HP9M/0.jpg)](https://www.youtube.com/watch?v=104T2j7HP9M)
 
 ### Pre-requisitos instalación programa 📋
 
