@@ -66,6 +66,8 @@ Que podrá ser importado a DAMDATA.
 
 Con el botón SCRIPT ![Script Columnas](ayuda/ScriptColumnas.png), se abre un formulario más avanzado, donde podemos automatizar el proceso de crear ficheros .csv cuando hemos cargado muchas columnas de datos de sensores, permitiendo la creación automática de múltiples ficheros .csv.
 
+Videotutorial en youtube:
+
 [![video tutorial usando script](https://img.youtube.com/vi/104T2j7HP9M/0.jpg)](https://www.youtube.com/watch?v=104T2j7HP9M)
 
 ### Pre-requisitos instalación programa 📋
