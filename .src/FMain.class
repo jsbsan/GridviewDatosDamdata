@@ -71,6 +71,11 @@ Public Sub ButtonPegarDatos_Click()
 
   Endif
 
+  'para eliminar lineas en blanco al final del gridview...
+  For a = 1 To 5
+    If gridviewOrigen[gridviewOrigen.rows.Count - 1, 0].Text = "" Then gridviewOrigen.rows.Count = gridviewOrigen.rows.Count - 1
+  Next
+
   Try TextBoxColumnaSENSOR.TEXT = gridviewOrigen[2, 1].Text
 
 End
@@ -97,7 +102,7 @@ Public Sub ButtonOperar_Click()
     .Columns[1].title = "sensor"
     .columns[2].title = "dato"
     .Border = 2
-    .rows.Count = lineas.Count - 1
+    .rows.Count = gridviewOrigen.Rows.count
     .Columns.Width = 150
   End With
 
@@ -254,12 +259,15 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
         If a = 0 Then
           contenidoMejorado &= token[0]
         Else
+          If token[0] = "" Then Continue
           contenidoMejorado &= "\t" & listaCabeceras[a] & "\t" & token[a]
         Endif
       Next
       'se ha llegado al final de las columnas
       contenidoMejorado &= "\n"
     Next
+
+    ' contenidoMejorado = Mid(contenidoMejorado, 1, Len(contenidoMejorado) - 1)
 
     Clipboard.Copy(contenidoMejorado, "text/plain")
     'ahora pegos los nuevos datos en el gridview
