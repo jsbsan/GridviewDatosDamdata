@@ -197,6 +197,10 @@ Public Sub limpiar()
   gridviewOrigen.Clear()
   GridViewDestino.Clear()
   lineas.Clear()
+  gridviewOrigen.Columns.Count = lineas.Count
+  gridviewOrigen.rows.Count = lineas.Count
+  GridViewDestino.Columns.Count = lineas.Count
+  GridViewDestino.rows.Count = lineas.Count
 
 End
 

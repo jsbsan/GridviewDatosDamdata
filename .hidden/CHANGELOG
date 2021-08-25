@@ -1,3 +1,6 @@
+* Wed Aug 25 2021 jsbsan <jusabejusabe@gmail.com> 0.0.23
+- cambio de situacion boton de limpiar, y bug corregido al crear escript ya que cogia la 2 fila. Ahora depende si hay o no cabeceras, coge la fila 0 o la 1
+
 * Tue Aug 17 2021 jsbsan <jusabejusabe@gmail.com> 0.0.22
 - elimina filas vacias al final del gridviewOrigen y gridviewDestino
 

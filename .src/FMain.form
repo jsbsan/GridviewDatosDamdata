@@ -5,11 +5,11 @@
   Icon = Picture["icono aplicacion.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox
-    MoveScaled(2,5,150,65)
+    MoveScaled(0,3,150,65)
     { Panel1 Panel
       MoveScaled(0,0,150,10)
       { ButtonPegarDatos Button
-        MoveScaled(0,5,26,5)
+        MoveScaled(11,6,26,4)
         ToolTip = ("fecha, columnas nombre sensor, dato")
         Text = ("Pegar Datos")
         Picture = Picture["icon:/22/paste"]
@@ -21,46 +21,47 @@
         Picture = Picture["icon:/22/office-calc"]
       }
       { !TextBoxColumnaDatos TextBox
-        MoveScaled(41,5,22,4)
+        MoveScaled(52,6,22,3)
         #Public = True
         ToolTip = ("Si pone 0, pongo columna con valor cadena vacia")
         Text = ("3")
       }
       { Label1 Label
-        MoveScaled(27,5,14,4)
+        MoveScaled(38,6,14,3)
         Alignment = Align.Right
         Text = ("Columna Datos:")
       }
       { !ButtonOperar Button
-        MoveScaled(84,5,15,4)
+        MoveScaled(95,5,15,4)
         #Public = True
         Text = ("operar")
         Picture = Picture["icon:/22/exec"]
       }
       { Label2 Label
-        MoveScaled(27,0,14,4)
+        MoveScaled(38,1,14,3)
         Alignment = Align.Right
         Text = ("Nombre Sensor:")
       }
       { !TextBoxColumnaSENSOR TextBox
-        MoveScaled(41,0,22,4)
+        MoveScaled(52,1,22,3)
         #Public = True
       }
       { !CheckButtonhora CheckBox
-        MoveScaled(64,1,9,3)
+        MoveScaled(75,1,9,3)
         #Public = True
         Text = ("hora:")
       }
       { Labelversion Label
-        MoveScaled(85,2,14,2)
+        MoveScaled(96,2,14,2)
       }
       { ButtonLimpiar Button
-        MoveScaled(100,1,12,8)
+        MoveScaled(1,1,9,8)
+        Font = Font["-2"]
         Text = ("limpiar")
         Picture = Picture["icon:/22/clear"]
       }
       { TextBoxHora TextBox
-        MoveScaled(73,1,11,3)
+        MoveScaled(84,1,11,3)
         Text = ("08:00:00")
       }
       { ButtonScript Button
@@ -69,20 +70,20 @@
         Picture = Picture["script ICONO.png"]
       }
       { !CheckBoxCabecera CheckBox
-        MoveScaled(64,6,18,3)
+        MoveScaled(75,6,18,3)
         #Public = True
         ToolTip = ("Si en la 1º fila del gridviews hay cabeceras de datos")
         Text = ("Con Cabecera")
       }
       { ButtonPegarSinColumnasSensores Button
-        MoveScaled(0,0,26,4)
+        MoveScaled(11,1,26,4)
         Font = Font["-2"]
         ToolTip = ("fecha,dato [1 fila contiene nombre sensores]")
         Text = ("Pegar Sin Columnas Sensores")
         Picture = Picture["PegarEspecialSinColumnasSensores22.png"]
       }
       { ButtonAyuda Button
-        MoveScaled(143,1,6,8)
+        MoveScaled(142,1,6,8)
         ToolTip = ("ayuda")
         Picture = Picture["icon:/22/help"]
       }
