@@ -30,8 +30,11 @@ Public Sub ButtonEjecutar_Click()
   Next
 
   Settings["scriptAnterior"] = TextAreaSCRIPT.text
-  Message.Info("El script ha terminado de ejecutarse" & "\n" & "Ejecutadas: " & Str$(contador - 1) & " lineas de comandos")
+  '  Message.Info("El script ha terminado de ejecutarse" & "\n" & "Ejecutadas: " & Str$(contador - 1) & " lineas de comandos")
+  music.load("HongoMarioBross.wav")
+  music.play
   LabelProceso.Text = ""
+  Me.close()
 
 End
 

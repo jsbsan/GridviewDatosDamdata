@@ -115,7 +115,12 @@ Public Sub ButtonOperar_Click()
   Endif
 
   'PONGO NOMBRE DE SENSOR
-  GridViewDestino[0, 1].Text = TextBoxColumnaSENSOR.Text
+  Try GridViewDestino[0, 1].Text = TextBoxColumnaSENSOR.Text
+
+  If Error Then
+    Message.Info("Error:" & gb.CrLf & Error.Text)
+    Return
+  Endif
 
   If Val(TextBoxColumnaDatos.Text) - 1 = -1 Then
     GridViewDestino[0, 2].Text = ""
@@ -180,7 +185,8 @@ Public Sub ButtonGenerar_Click()
 
   File.Save(User.home & "/PDF/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
 
-  Message2.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
+  ' Message2.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
+  Wait 3'espero 3 segundos
 
 End
 

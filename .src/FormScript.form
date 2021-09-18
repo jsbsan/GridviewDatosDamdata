@@ -58,6 +58,8 @@
   }
   { LabelProceso Label
     MoveScaled(134,41,24,4)
+    Font = Font["Bold,Italic"]
+    Foreground = &HFF0000&
     Alignment = Align.Center
     Text = ("  ")
   }
