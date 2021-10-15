@@ -1,3 +1,6 @@
+* Fri Oct 15 2021 jsbsan <jusabejusabe@gmail.com> 0.0.24
+- pone en color verde cuando se esta ejecutando el script en la label de proceso
+
 * Sat Sep 18 2021 jsbsan <jusabejusabe@gmail.com> 0.0.24
 - pongo sonido cuando termina de ejecutar el script quitando formulario que salia cuando hacia una columna
 
