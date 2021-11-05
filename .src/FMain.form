@@ -5,9 +5,9 @@
   Icon = Picture["icono aplicacion.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox
-    MoveScaled(0,3,150,65)
+    MoveScaled(0,3,154,69)
     { Panel1 Panel
-      MoveScaled(0,0,150,10)
+      MoveScaled(0,0,153,10)
       { ButtonPegarDatos Button
         MoveScaled(11,6,26,4)
         ToolTip = ("fecha, columnas nombre sensor, dato")
@@ -23,6 +23,7 @@
       { !TextBoxColumnaDatos TextBox
         MoveScaled(52,6,22,3)
         #Public = True
+        Font = Font["-2"]
         ToolTip = ("Si pone 0, pongo columna con valor cadena vacia")
         Text = ("3")
       }
@@ -45,6 +46,7 @@
       { !TextBoxColumnaSENSOR TextBox
         MoveScaled(52,1,22,3)
         #Public = True
+        Font = Font["-2"]
       }
       { !CheckButtonhora CheckBox
         MoveScaled(75,1,9,3)
@@ -62,12 +64,13 @@
       }
       { TextBoxHora TextBox
         MoveScaled(84,1,11,3)
+        Font = Font["-2"]
         Text = ("08:00:00")
       }
       { ButtonScript Button
-        MoveScaled(113,1,27,8)
+        MoveScaled(110,1,27,8)
         Text = ("Script de Columnas")
-        Picture = Picture["script ICONO.png"]
+        Picture = Picture["script36x36.png"]
       }
       { !CheckBoxCabecera CheckBox
         MoveScaled(75,6,18,3)
@@ -83,9 +86,14 @@
         Picture = Picture["PegarEspecialSinColumnasSensores22.png"]
       }
       { ButtonAyuda Button
-        MoveScaled(142,1,6,8)
+        MoveScaled(144,1,6,8)
         ToolTip = ("ayuda")
         Picture = Picture["icon:/22/help"]
+      }
+      { ButtonUnirFicheros Button
+        MoveScaled(138,1,5,8)
+        ToolTip = ("Abrir Aplicación Unir Ficheros de Textos")
+        Picture = Picture["uniftxt.png"]
       }
     }
     { Splitter1 Splitter

@@ -292,3 +292,9 @@ Public Sub ButtonAyuda_Click()
   Desktop.Open("https://github.com/jsbsan/GridviewDatosDamdata/blob/main/README.md")
 
 End
+
+Public Sub ButtonUnirFicheros_Click()
+
+  Shell "unirficherostexto"
+
+End

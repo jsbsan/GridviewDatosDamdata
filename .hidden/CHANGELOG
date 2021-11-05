@@ -1,3 +1,6 @@
+* Fri Nov 05 2021 jsbsan <jusabejusabe@gmail.com> 0.0.25
+- agregado boton para abrir la aplicacion unir ficheros de textos
+
 * Fri Oct 15 2021 jsbsan <jusabejusabe@gmail.com> 0.0.24
 - pone en color verde cuando se esta ejecutando el script en la label de proceso
 
