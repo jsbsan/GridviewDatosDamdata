@@ -1,3 +1,6 @@
+* Wed Jan 19 2022 jsbsan <jusabejusabe@gmail.com> 0.0.27
+- elimino de los datos de origen la hora 00:00, porque da problemas
+
 * Wed Jan 19 2022 jsbsan <jusabejusabe@gmail.com> 0.0.26
 - amplio conversion de años de 2 a 4 cifras osea de 22 a 2022, hasta el 2030
 
