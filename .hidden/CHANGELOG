@@ -1,3 +1,6 @@
+* Tue Jan 25 2022 jsbsan <jusabejusabe@gmail.com> 0.0.28
+- reemplazo  0:00
+
 * Wed Jan 19 2022 jsbsan <jusabejusabe@gmail.com> 0.0.27
 - elimino de los datos de origen la hora 00:00, porque da problemas
 

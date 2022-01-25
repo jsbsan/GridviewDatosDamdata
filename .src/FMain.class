@@ -26,7 +26,9 @@ Public Sub ButtonPegarDatos_Click()
   TextAreaSalida.Visible = False
   If Clipboard.Text = 1 Then
     contenido = Clipboard.Paste("text/plain")
-    contenido = Replace(contenido, " 00:00", "") 'por si poen la toma de datos
+    contenido = Replace(contenido, " 00:00", "") 'por si ponen la toma de datos
+    contenido = Replace(contenido, " 0:00", "") 'por si ponen la toma de datos
+
     LINEAS = Split(CONTENIDO, "\n")
     '  Print LINEAS.count
     contador = -1
@@ -262,7 +264,7 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
   If Clipboard.Text = 1 Then
     contenido = Clipboard.Paste("text/plain")
     contenido = Replace(contenido, " 00:00", "") 'por si poen la toma de datos
-
+    contenido = Replace(contenido, " 0:00", "") 'por si poen la toma de datos
     LINEAS = Split(CONTENIDO, "\n")
 
     contador = -1
