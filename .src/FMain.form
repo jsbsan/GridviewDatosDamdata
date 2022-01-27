@@ -68,7 +68,7 @@
         Text = ("08:00:00")
       }
       { ButtonScript Button
-        MoveScaled(110,1,27,8)
+        MoveScaled(110,1,23,8)
         Text = ("Script de Columnas")
         Picture = Picture["script36x36.png"]
       }
@@ -86,14 +86,21 @@
         Picture = Picture["PegarEspecialSinColumnasSensores22.png"]
       }
       { ButtonAyuda Button
-        MoveScaled(144,1,6,8)
+        MoveScaled(143,1,5,8)
         ToolTip = ("ayuda")
         Picture = Picture["icon:/22/help"]
       }
       { ButtonUnirFicheros Button
-        MoveScaled(138,1,5,8)
+        MoveScaled(133,1,10,8)
+        Font = Font["-3"]
         ToolTip = ("Abrir Aplicación Unir Ficheros de Textos")
-        Picture = Picture["uniftxt.png"]
+        Text = ("UNIR\nFICHEROS\nCSV")
+        Picture = Picture["icon:/22/add"]
+      }
+      { ButtonConfigurarSettings Button
+        MoveScaled(149,1,4,8)
+        ToolTip = ("configuracion")
+        Text = (":")
       }
     }
     { Splitter1 Splitter

@@ -4,8 +4,14 @@ Public lineas As New String[]
 
 Public Sub Form_Open()
 
+  Dim rutaGuadarDatosGenerados As String
+
   Me.center
   Labelversion.text = "Version: " & Application.Version
+
+  'primer arranque, configurar ruta de donde se guardan los datos
+  rutaGuadarDatosGenerados = Settings["RUTAS/RutaGuardarFicherosGenerados", User.home & "/PDF"]'por defecto le da esta ruta, pero se puede cambiar
+  Settings["RUTAS/RutaGuardarFicherosGenerados"] = rutaGuadarDatosGenerados
 
 End
 
@@ -154,6 +160,7 @@ End
 
 Public Sub ButtonGenerar_Click()
 
+  Dim rutaGuadarDatosGenerados As String 'ruta a guardar los ficheros generados, normalmente seria user.home & "/PDF"
   Dim a As Integer
   Dim lineas As String
   Dim contenido As String
@@ -196,7 +203,8 @@ Public Sub ButtonGenerar_Click()
   TextAreaSalida.Visible = True
   TextAreaSalida.Text = contenido
 
-  File.Save(User.home & "/PDF/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
+  rutaGuadarDatosGenerados = Settings["RUTAS/RutaGuardarFicherosGenerados", User.home & "/PDF"]
+  File.Save(rutaGuadarDatosGenerados & "/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
 
   ' Message2.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
   Wait 3'espero 3 segundos
@@ -311,5 +319,11 @@ End
 Public Sub ButtonUnirFicheros_Click()
 
   Shell "unirficherostexto"
+
+End
+
+Public Sub ButtonConfigurarSettings_Click()
+
+  Desktop.Open(User.home & "/.config/gambas3/GridviewDatosDamdata.conf")
 
 End

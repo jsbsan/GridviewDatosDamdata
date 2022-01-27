@@ -1,3 +1,9 @@
+* Thu Jan 27 2022 jsbsan <jusabejusabe@gmail.com> 0.0.30
+- Acceso al fichero de configuracion para definir la ruta donde se quieran guardar los ficheros .csv generados
+
+* Wed Jan 26 2022 jsbsan <jusabejusabe@gmail.com> 0.0.29
+- si la columna de datos tiene el nombre de "ANULAR", no la tiene en cuenta y la salta.
+
 * Tue Jan 25 2022 jsbsan <jusabejusabe@gmail.com> 0.0.28
 - reemplazo  0:00
 

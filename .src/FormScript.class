@@ -107,6 +107,14 @@ Public Sub ButtonGenerarScript_Click()
   TextAreaSCRIPT.Text = ""
   For a = 1 To (GridViewDATOS.Columns.Count - 1) Step 2
     TextAreaSCRIPT.Text &= "------------" & "\n"
+
+    'Anular columnas con nombre "ANULAR"
+    If CheckBoxcABECERA.Value = True Then
+      If GridViewDATOS[1, a].Text = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
+    Else
+      If GridViewDATOS[0, a].text = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
+    Endif
+
     If CheckBoxcABECERA.Value = True Then
       'hay cabecera de datos en el gridviewOrigen
       TextAreaSCRIPT.Text &= "TextBoxColumnaSENSOR," & GridViewDATOS[1, a].text & "\n" 'cogo dato de la fila 2 (se empieza a numerar por 0,1,2,3...)

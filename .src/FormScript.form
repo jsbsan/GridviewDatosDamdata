@@ -3,13 +3,14 @@
 { Form Form
   MoveScaled(0,0,159,91)
   Icon = Picture["script ICONO.png"]
+  Resizable = False
   { TextAreaSCRIPT TextArea
     MoveScaled(1,1,90,89)
     Text = ("------------------comentario-------------------\nTextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()\n------------------comentario-------------------\n\n")
   }
   { ButtonEjecutar Button
-    MoveScaled(134,36,24,4)
-    Text = ("EJECUTAR SCRIPT")
+    MoveScaled(144,37,14,13)
+    Text = ("EJECUTAR\nSCRIPT")
     Picture = Picture["icon:/22/jump"]
   }
   { TextAreaaYUDA TextArea
@@ -20,18 +21,18 @@
     Wrap = True
   }
   { ButtonRecuperarScript Button
-    MoveScaled(92,36,28,4)
+    MoveScaled(95,85,28,4)
     Text = ("Recuperar Script Anterior")
     Picture = Picture["icon:/22/start"]
   }
   { ButtonReiniciarContenido Button
-    MoveScaled(92,43,28,4)
+    MoveScaled(130,85,28,4)
     Tag = "TextBoxColumnaSENSOR,\nTextBoxColumnaDatos,\nCheckButtonhora,\nCheckBoxCabecera,\nTextBoxHora,\nButtonOperar_click()"
     Text = ("Reiniciar contenido")
     Picture = Picture["icon:/22/refresh"]
   }
   { Frame1 Frame
-    MoveScaled(93,48,65,39)
+    MoveScaled(92,36,51,47)
     Text = ("Generador de Script")
     { ButtonGenerarScript Button
       MoveScaled(2,4,28,6)
@@ -40,24 +41,24 @@
       Picture = Picture["icon:/22/bicycle"]
     }
     { TextAreaaYUDA2 TextArea
-      MoveScaled(1,12,49,26)
+      MoveScaled(1,20,49,26)
       Background = Color.Background
-      Text = ("Script automatico\nSe genera automaticamente, teniendo en cuenta:\n1º la primera columna tiene la fecha\ny las sucesivas columnas:\nel nombre del sensor\nel dato que da el sensor\n\nCreaando el script para todas las columnas que tenga el gridview de datos.\n")
+      Text = ("Script automatico\nSe genera automaticamente, teniendo en cuenta:\n1º la primera columna tiene la fecha\ny las sucesivas columnas:\nel nombre del sensor\nel dato que da el sensor\n\nCreando el script para todas las columnas que tenga el gridview de datos. Si la columna tiene el nombre de sensor \"ANULAR\" salta a la siguiente, \n")
       ReadOnly = True
       Wrap = True
     }
     { CheckBoxHORA CheckBox
-      MoveScaled(36,4,25,3)
+      MoveScaled(3,11,25,3)
       Text = ("chechbuttonhora")
       Value = CheckBox.True
     }
     { CheckBoxcABECERA CheckBox
-      MoveScaled(36,8,25,3)
+      MoveScaled(2,16,25,3)
       Text = ("checkBoxCabecera")
     }
   }
   { LabelProceso Label
-    MoveScaled(134,41,24,4)
+    MoveScaled(144,52,14,4)
     Font = Font["Bold,Italic"]
     Foreground = &HFF0000&
     Alignment = Align.Center
