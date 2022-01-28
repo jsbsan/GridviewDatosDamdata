@@ -1,3 +1,6 @@
+* Fri Jan 28 2022 jsbsan <jusabejusabe@gmail.com> 0.0.31
+- mas rapido y sonido cuando termina el script mas bajo.
+
 * Thu Jan 27 2022 jsbsan <jusabejusabe@gmail.com> 0.0.30
 - Acceso al fichero de configuracion para definir la ruta donde se quieran guardar los ficheros .csv generados
 

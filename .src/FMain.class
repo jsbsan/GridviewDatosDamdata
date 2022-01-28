@@ -2,6 +2,8 @@
 
 Public lineas As New String[]
 
+Public OperacionTerminada As Boolean = False
+
 Public Sub Form_Open()
 
   Dim rutaGuadarDatosGenerados As String
@@ -166,6 +168,7 @@ Public Sub ButtonGenerar_Click()
   Dim contenido As String
   Dim iniciardatos As Integer
 
+  OperacionTerminada = False
   'ENMPIEZO EN LA 1º LINEA -> las cabeceras ya estan eliminadas segun checkbox
 
   If CheckBoxCabecera.value Then
@@ -183,7 +186,7 @@ Public Sub ButtonGenerar_Click()
 
   Clipboard.Copy(contenido)
 
-  'SISTEMA DE REEMPLAZO PARA DATOS PROVENIENTES DEL SAIH, años 2018, 2019,2020,2021
+  'SISTEMA DE REEMPLAZO PARA DATOS PROVENIENTES DEL SAIH, años 2011 al 2030
   contenido = Replace(contenido, "/30 ", "/2030 ")
   contenido = Replace(contenido, "/29 ", "/2029 ")
   contenido = Replace(contenido, "/28 ", "/2028 ")
@@ -197,6 +200,14 @@ Public Sub ButtonGenerar_Click()
   contenido = Replace(contenido, "/20 ", "/2020 ")
   contenido = Replace(contenido, "/19 ", "/2019 ")
   contenido = Replace(contenido, "/18 ", "/2018 ")
+  contenido = Replace(contenido, "/17 ", "/2017 ")
+  contenido = Replace(contenido, "/16 ", "/2016 ")
+  contenido = Replace(contenido, "/15 ", "/2015 ")
+  contenido = Replace(contenido, "/14 ", "/2014 ")
+  contenido = Replace(contenido, "/13 ", "/2013 ")
+  contenido = Replace(contenido, "/12 ", "/2012 ")
+  contenido = Replace(contenido, "/11 ", "/2011 ")
+
   contenido = Replace(contenido, " 00:00", "") 'por si poen la toma de datos
 
   'muestro datos de salida generado
@@ -205,9 +216,12 @@ Public Sub ButtonGenerar_Click()
 
   rutaGuadarDatosGenerados = Settings["RUTAS/RutaGuardarFicherosGenerados", User.home & "/PDF"]
   File.Save(rutaGuadarDatosGenerados & "/test_" & TextBoxColumnaSENSOR.Text & ".csv", contenido)
+  Wait 0.2 'para que le de tiempo guardar el fichero
 
+  OperacionTerminada = True
+  Wait 0.2
   ' Message2.Info("Generado fichero en:" & gb.NewLine & User.home & "/pdf/test_" & TextBoxColumnaSENSOR.Text & ".csv")
-  Wait 3'espero 3 segundos
+  ' Wait 3'espero 3 segundos
 
 End
 

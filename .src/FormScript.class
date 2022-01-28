@@ -34,6 +34,7 @@ Public Sub ButtonEjecutar_Click()
   Settings["scriptAnterior"] = TextAreaSCRIPT.text
   '  Message.Info("El script ha terminado de ejecutarse" & "\n" & "Ejecutadas: " & Str$(contador - 1) & " lineas de comandos")
   music.load("HongoMarioBross.wav")
+  Music.Volume = 15
   music.play
   LabelProceso.Text = ""
   Me.close()
@@ -65,7 +66,13 @@ Public Sub ejecutar(lugar As String, valor As String)
 
     Case Upper("ButtonOperar_click()")
       formularioPrincipal.ButtonOperar_Click()
-      Wait 5'espero unos segundos despues de realizar calculos
+
+      While (formularioPrincipal.OperacionTerminada = False)
+        Wait 0.1
+        Print "espere..."
+      Wend
+
+      '  Wait 5'espero unos segundos despues de realizar calculos
 
   End Select
 
