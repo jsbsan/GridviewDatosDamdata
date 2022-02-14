@@ -117,9 +117,9 @@ Public Sub ButtonGenerarScript_Click()
 
     'Anular columnas con nombre "ANULAR"
     If CheckBoxcABECERA.Value = True Then
-      If GridViewDATOS[1, a].Text = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
+      If Upper(GridViewDATOS[1, a].Text) = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
     Else
-      If GridViewDATOS[0, a].text = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
+      If Upper(GridViewDATOS[0, a].text) = "ANULAR" Then Continue 'PASA AL SIGUIENTE CICLO
     Endif
 
     If CheckBoxcABECERA.Value = True Then

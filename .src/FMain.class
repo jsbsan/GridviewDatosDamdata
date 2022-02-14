@@ -36,7 +36,7 @@ Public Sub ButtonPegarDatos_Click()
     contenido = Clipboard.Paste("text/plain")
     contenido = Replace(contenido, " 00:00", "") 'por si ponen la toma de datos
     contenido = Replace(contenido, " 0:00", "") 'por si ponen la toma de datos
-
+    contenido = reemplazosFechas(contenido)
     LINEAS = Split(CONTENIDO, "\n")
     '  Print LINEAS.count
     contador = -1
@@ -88,6 +88,8 @@ Public Sub ButtonPegarDatos_Click()
   Next
 
   Try TextBoxColumnaSENSOR.TEXT = gridviewOrigen[2, 1].Text
+  'Revision de fecha en la primera columan
+  ReemplazoEnGridviewOrigenDeFechas()
 
 End
 
@@ -119,7 +121,16 @@ Public Sub ButtonOperar_Click()
 
   'PONGO FECHA Y HORA (DEPENDE DEL VALOR DEL CheckButtonhora.Value
   If CheckButtonhora.Value = True Then
-    Try GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text & " " & TextBoxHora.text
+    'comprueba si tiene una hora el dato de fecha:
+    If Len(GridViewOrigen[0, 0].text & " " & TextBoxHora.text) > Len("00/00/0000 00:00:00") Then
+      GridViewDestino[0, 0].Text = Mid$(GridViewOrigen[0, 0].text, 1, Len("00/00/0000")) & " " & TextBoxHora.text' le quito la hora que tenga
+    Else
+      If Len(GridViewOrigen[0, 0].text) = Len("00/00/0000") Then
+        Try GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text & " " & TextBoxHora.text 'solo tiene  fecha.
+      Else
+        Message.Info("Hay un error en la fecha:" & GridViewOrigen[0, 0].text)
+      Endif
+    Endif
   Else
     Try GridViewDestino[0, 0].Text = GridViewOrigen[0, 0].text
 
@@ -141,7 +152,24 @@ Public Sub ButtonOperar_Click()
 
   For a = 1 To lineas.count - 1
     If CheckButtonhora.Value = True Then
-      Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " " & TextBoxHora.text
+      'comprueba si tiene una hora el dato de fecha:
+      Dim longitud As Integer
+      Try longitud = Len(GridViewOrigen[a, 0].text & " " & TextBoxHora.text)
+      If Error Then longitud = 0
+      If longitud > Len("00/00/0000 00:00:00") Then
+        Try GridViewDestino[a, 0].Text = Mid$(GridViewOrigen[a, 0].text, 1, Len("00/00/0000")) & " " & TextBoxHora.text' le quito la hora que tenga
+      Else
+        Try longitud = Len(GridViewOrigen[a, 0].text)
+        If Not Error Then
+          If Len(GridViewOrigen[a, 0].text) = Len("00/00/0000") Then
+            Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " " & TextBoxHora.text 'solo tiene  fecha.
+          Else
+            Message.Info("Hay un error en la fecha:" & GridViewOrigen[a, 0].text)
+          Endif
+        Else
+          Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
+        Endif
+      Endif
     Else
       Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
 
@@ -187,28 +215,8 @@ Public Sub ButtonGenerar_Click()
   Clipboard.Copy(contenido)
 
   'SISTEMA DE REEMPLAZO PARA DATOS PROVENIENTES DEL SAIH, años 2011 al 2030
-  contenido = Replace(contenido, "/30 ", "/2030 ")
-  contenido = Replace(contenido, "/29 ", "/2029 ")
-  contenido = Replace(contenido, "/28 ", "/2028 ")
-  contenido = Replace(contenido, "/27 ", "/2027 ")
-  contenido = Replace(contenido, "/26 ", "/2026 ")
-  contenido = Replace(contenido, "/25 ", "/2025 ")
-  contenido = Replace(contenido, "/24 ", "/2024 ")
-  contenido = Replace(contenido, "/23 ", "/2023 ")
-  contenido = Replace(contenido, "/22 ", "/2022 ")
-  contenido = Replace(contenido, "/21 ", "/2021 ")
-  contenido = Replace(contenido, "/20 ", "/2020 ")
-  contenido = Replace(contenido, "/19 ", "/2019 ")
-  contenido = Replace(contenido, "/18 ", "/2018 ")
-  contenido = Replace(contenido, "/17 ", "/2017 ")
-  contenido = Replace(contenido, "/16 ", "/2016 ")
-  contenido = Replace(contenido, "/15 ", "/2015 ")
-  contenido = Replace(contenido, "/14 ", "/2014 ")
-  contenido = Replace(contenido, "/13 ", "/2013 ")
-  contenido = Replace(contenido, "/12 ", "/2012 ")
-  contenido = Replace(contenido, "/11 ", "/2011 ")
 
-  contenido = Replace(contenido, " 00:00", "") 'por si poen la toma de datos
+  contenido = reemplazosFechas(contenido)
 
   'muestro datos de salida generado
   TextAreaSalida.Visible = True
@@ -322,6 +330,9 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
     CheckBoxCabecera.Value = False
   Endif
 
+  'reemplazo de fechas en columna 1
+  ReemplazoEnGridviewOrigenDeFechas()
+
 End
 
 Public Sub ButtonAyuda_Click()
@@ -339,5 +350,61 @@ End
 Public Sub ButtonConfigurarSettings_Click()
 
   Desktop.Open(User.home & "/.config/gambas3/GridviewDatosDamdata.conf")
+
+End
+
+Public Sub reemplazosFechas(contenido As String) As String
+
+  contenido = Replace(contenido, "/30 ", "/2030 ")
+  contenido = Replace(contenido, "/29 ", "/2029 ")
+  contenido = Replace(contenido, "/28 ", "/2028 ")
+  contenido = Replace(contenido, "/27 ", "/2027 ")
+  contenido = Replace(contenido, "/26 ", "/2026 ")
+  contenido = Replace(contenido, "/25 ", "/2025 ")
+  contenido = Replace(contenido, "/24 ", "/2024 ")
+  contenido = Replace(contenido, "/23 ", "/2023 ")
+  contenido = Replace(contenido, "/22 ", "/2022 ")
+  contenido = Replace(contenido, "/21 ", "/2021 ")
+  contenido = Replace(contenido, "/20 ", "/2020 ")
+  contenido = Replace(contenido, "/19 ", "/2019 ")
+  contenido = Replace(contenido, "/18 ", "/2018 ")
+  contenido = Replace(contenido, "/17 ", "/2017 ")
+  contenido = Replace(contenido, "/16 ", "/2016 ")
+  contenido = Replace(contenido, "/15 ", "/2015 ")
+  contenido = Replace(contenido, "/14 ", "/2014 ")
+  contenido = Replace(contenido, "/13 ", "/2013 ")
+  contenido = Replace(contenido, "/12 ", "/2012 ")
+  contenido = Replace(contenido, "/11 ", "/2011 ")
+  contenido = Replace(contenido, "/10 ", "/2010 ")
+  contenido = Replace(contenido, "/09 ", "/2009 ")
+  contenido = Replace(contenido, "/08 ", "/2008 ")
+  contenido = Replace(contenido, "/07 ", "/2007 ")
+  contenido = Replace(contenido, "/06 ", "/2006 ")
+  contenido = Replace(contenido, "/05 ", "/2005 ")
+  contenido = Replace(contenido, "/04 ", "/2004 ")
+  contenido = Replace(contenido, "/03 ", "/2003 ")
+  contenido = Replace(contenido, "/02 ", "/2002 ")
+  contenido = Replace(contenido, "/01 ", "/2001 ")
+  contenido = Replace(contenido, "/00 ", "/2000 ")
+  contenido = Replace(contenido, " 00:00", "")
+
+  Return contenido
+
+End
+
+Public Sub ReemplazoEnGridviewOrigenDeFechas()
+
+  Dim a As Integer
+
+  For a = 0 To gridviewOrigen.rows.Count - 1
+    If Len(gridviewOrigen[a, 0].Text) = Len("dd/mm/aa") Then
+      gridviewOrigen[a, 0].Text = gridviewOrigen[a, 0].Text & " "'añado un espacio para que funcione la siguiente funcion de reemplazo de fechas
+    Else
+      'no le añado nada, porque puede ser que la fecha tenga la hora metida y tendria ya es espacio incluido
+    Endif
+
+    gridviewOrigen[a, 0].Text = reemplazosFechas(gridviewOrigen[a, 0].Text)
+
+  Next
 
 End
