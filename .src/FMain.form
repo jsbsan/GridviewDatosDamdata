@@ -7,7 +7,7 @@
   { VBox1 VBox
     MoveScaled(0,3,154,69)
     { Panel1 Panel
-      MoveScaled(0,0,153,10)
+      MoveScaled(0,0,153,18)
       { ButtonPegarDatos Button
         MoveScaled(11,6,26,4)
         ToolTip = ("fecha, columnas nombre sensor, dato")
@@ -102,9 +102,21 @@
         ToolTip = ("configuracion")
         Text = (":")
       }
+      { CheckBoxCerosFinales CheckBox
+        MoveScaled(10,11,41,6)
+        Font = Font["+2"]
+        Text = ("Eliminar lineas con ceros finales")
+        Value = CheckBox.True
+      }
+      { CheckBoxDatosDiarios CheckBox
+        MoveScaled(55,11,41,6)
+        Font = Font["+2"]
+        Text = ("Solo coger datos de un dia")
+        Value = CheckBox.True
+      }
     }
     { Splitter1 Splitter
-      MoveScaled(2,11,119,53)
+      MoveScaled(7,22,119,53)
       Expand = True
       { GridViewOrigen GridView
         MoveScaled(2,4,33,31)

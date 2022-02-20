@@ -1,0 +1,42 @@
+' Gambas class file
+
+Public Sub ButtonPegar_Click()
+
+  FMain.Show()
+  FMain.ButtonPegarSinColumnasSensores_Click()
+  Wait 1
+  FMain.ButtonScript_Click()
+  FormScript.ButtonGenerarScript_Click()
+  Wait 1
+  FormScript.ButtonEjecutar_Click()
+
+End
+
+Public Sub ButtonContenidoPortapapeles_Click()
+
+  Try ImageView1.Image = Clipboard.Paste()
+
+  If Error Then
+    Message.Error("No es posible mostrar imagen del portapapeles.\nEl boton de SuperScript puede generar archivos no validos\nCuidado!!!")
+    ImageView1.Image = image.Load("warning.png")
+  Endif
+
+End
+
+Public Sub Form_Open()
+
+  LabelVersion.Text = "Version " & Application.Version
+
+End
+
+Public Sub ButtonIrVersionClasica_Click()
+
+  FMain.Show()
+
+End
+
+Public Sub ButtonUnirFicheros_Click()
+
+  Shell "unirficherostexto"
+
+End

@@ -1,0 +1,41 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,123,64)
+  { ButtonPegar Button
+    MoveScaled(1,2,52,12)
+    Text = ("SuperScript: Genera del contenido todos los .csv\nOpciones por defecto: \n-Elimina datos 0,00\n-Solo coge un dato por dia\n-Hora Asignada: 08:00:00")
+    Picture = Picture["icon:/48/exec"]
+  }
+  { PictureBox1 PictureBox
+    MoveScaled(3,32,51,30)
+    Picture = Picture["FormatoReconocidoOriginal (copia).png"]
+    Stretch = True
+  }
+  { Label1 Label
+    MoveScaled(3,27,41,5)
+    Text = ("Ejemplo de formato reconocido:")
+  }
+  { ButtonContenidoPortapapeles Button
+    MoveScaled(84,2,38,5)
+    Text = ("Contenido portapapeles")
+  }
+  { ImageView1 ImageView
+    MoveScaled(65,8,57,54)
+  }
+  { LabelVersion Label
+    MoveScaled(66,2,15,5)
+  }
+  { ButtonIrVersionClasica Button
+    MoveScaled(1,18,52,9)
+    Text = ("Ir a version Clasica con mas opciones")
+    Picture = Picture["IconoClasicoOriginal2.png"]
+  }
+  { ButtonUnirFicheros Button
+    MoveScaled(54,2,10,12)
+    Font = Font["-3"]
+    ToolTip = ("Abrir Aplicación Unir Ficheros de Textos")
+    Text = ("UNIR\nFICHEROS\nCSV")
+    Picture = Picture["icon:/22/add"]
+  }
+}
