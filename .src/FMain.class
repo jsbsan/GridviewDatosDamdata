@@ -222,12 +222,16 @@ Public Sub ButtonGenerar_Click()
     lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";" & GridViewDestino[a, 2].text 'for windows
     'comprobacion de lineas con finales en ;0 ;,00 ;0,00
     If CheckBoxCerosFinales.Value = True Then
-      If Right(lineas, 2) = ";0" Then agregar = False
+      If agregar = True And Right(lineas, 2) = ";0" Then agregar = False
       If agregar = True And Right(lineas, 4) = ";,00" Then agregar = False
       If agregar = True And Right(lineas, 5) = ";0,00" Then agregar = False
       If agregar = True And Right(lineas, 4) = ";0,0" Then agregar = False
+      If agregar = True And Right(lineas, 6) = ";0,000" Then agregar = False
 
     Endif
+    'si se encuentra el dato final como n/a o value! no agregar en ningun caso
+    If Upper(Right(lineas, Len(";#VALUE!"))) = Upper(";#VALUE!") Then agregar = False
+    If Upper(Right(lineas, Len(";#N/A"))) = Upper(";#N/A") Then agregar = False
 
     'comprobacion de lineas con la mismafecha
     If agregar = True And CheckBoxDatosDiarios.Value = True Then

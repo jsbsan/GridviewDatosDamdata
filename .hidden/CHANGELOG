@@ -1,3 +1,6 @@
+* Tue Mar 29 2022 jsbsan <jusabejusabe@gmail.com> 0.0.35
+- si la linea de datos al final es n/a o value! no se añade
+
 * Sun Feb 20 2022 jsbsan <jusabejusabe@gmail.com> 0.0.34
 - simplificado el uso con un superscript
 
