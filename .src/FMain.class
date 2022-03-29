@@ -77,8 +77,12 @@ Public Sub ButtonPegarDatos_Click()
             Endif
 
           Else
-            'elimino espacio en blanco
-            Try gridviewOrigen[contador, a].Text = Trim(gridviewOrigen[contador - 1, a].Text)
+            'en el caso que que el token este vacio y  si la fila anterio r en la misma columan tiene datos distinto a 0, pongo el valor de la fila anterior
+            If contador > 0 Then
+              If Trim(gridviewOrigen[contador - 1, a].Text) <> "0" Then
+                Try gridviewOrigen[contador, a].Text = Trim(gridviewOrigen[contador - 1, a].Text)
+              Endif
+            Endif
           Endif
 
         Next

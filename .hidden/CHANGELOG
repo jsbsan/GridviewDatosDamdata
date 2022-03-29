@@ -1,3 +1,9 @@
+* Tue Mar 29 2022 jsbsan <jusabejusabe@gmail.com> 0.0.37
+- y no sea la fila primera
+
+* Tue Mar 29 2022 jsbsan <jusabejusabe@gmail.com> 0.0.36
+- 'en el caso que que el token este vacio y  si la fila anterio r en la misma columan tiene datos distinto a 0, pongo el valor de la fila anterior
+
 * Tue Mar 29 2022 jsbsan <jusabejusabe@gmail.com> 0.0.35
 - si la linea de datos al final es n/a o value! no se añade
 
