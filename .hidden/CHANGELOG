@@ -1,3 +1,6 @@
+* Wed Mar 30 2022 jsbsan <jusabejusabe@gmail.com> 0.0.38
+- agregado ANULA y N/D para omitir columnas o filas de datos con ese valor
+
 * Tue Mar 29 2022 jsbsan <jusabejusabe@gmail.com> 0.0.37
 - y no sea la fila primera
 
