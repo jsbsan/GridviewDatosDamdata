@@ -1,3 +1,6 @@
+* Wed Mar 30 2022 jsbsan <jusabejusabe@gmail.com> 0.0.39
+- agregado tambien #¡VALOR!" para que no incluya el dato
+
 * Wed Mar 30 2022 jsbsan <jusabejusabe@gmail.com> 0.0.38
 - agregado ANULA y N/D para omitir columnas o filas de datos con ese valor
 

@@ -235,6 +235,8 @@ Public Sub ButtonGenerar_Click()
     Endif
     'si se encuentra el dato final como n/a o value! no agregar en ningun caso
     If Upper(Right(lineas, Len(";#VALUE!"))) = Upper(";#VALUE!") Then agregar = False
+    If Upper(Right(lineas, Len(";#¡VALOR!"))) = Upper(";#¡VALOR!") Then agregar = False
+
     If Upper(Right(lineas, Len(";#N/A"))) = Upper(";#N/A") Then agregar = False
     If Upper(Right(lineas, Len(";#N/D"))) = Upper(";#N/D") Then agregar = False
 
