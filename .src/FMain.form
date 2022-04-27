@@ -118,8 +118,9 @@
     { Splitter1 Splitter
       MoveScaled(7,22,119,53)
       Expand = True
-      { GridViewOrigen GridView
+      { !GridViewOrigen GridView
         MoveScaled(2,4,33,31)
+        #Public = True
         ToolTip = ("Haz click y si es texto pasa a Nombre Sensor y si es numero pasa  el nº de columna a Columna Datos")
       }
       { GridViewDestino GridView

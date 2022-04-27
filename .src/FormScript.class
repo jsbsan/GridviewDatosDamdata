@@ -105,7 +105,7 @@ End
 Public Sub ButtonGenerarScript_Click()
 
   Dim GridViewDATOS As GridView
-  Dim A As Integer
+  Dim a As Integer
 
   GridViewDATOS = formularioPrincipal.GridViewOrigen
   'la 1º columna tiene fecha
@@ -117,9 +117,9 @@ Public Sub ButtonGenerarScript_Click()
 
     'Anular columnas con nombre "ANULAR"
     If CheckBoxcABECERA.Value = True Then
-      If Upper(GridViewDATOS[1, a].Text) = "ANULAR" Or Upper(GridViewDATOS[1, a].Text) = "ANULA" Then Continue 'PASA AL SIGUIENTE CICLO
+      If Upper(GridViewDATOS[1, a].Text) = "ANULAR" Or If Upper(GridViewDATOS[1, a].Text) = "ANULA" Then Continue 'PASA AL SIGUIENTE CICLO
     Else
-      If Upper(GridViewDATOS[0, a].text) = "ANULAR" Or Upper(GridViewDATOS[1, a].Text) = "ANULA" Then Continue 'PASA AL SIGUIENTE CICLO
+      If Upper(GridViewDATOS[0, a].text) = "ANULAR" Or If Upper(GridViewDATOS[0, a].Text) = "ANULA" Then Continue 'PASA AL SIGUIENTE CICLO
     Endif
 
     If CheckBoxcABECERA.Value = True Then

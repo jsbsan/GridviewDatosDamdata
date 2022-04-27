@@ -1,3 +1,6 @@
+* Wed Apr 27 2022 jsbsan <jusabejusabe@gmail.com> 0.0.40
+- Corregido bug cuando solo hay que exportar una sola fila
+
 * Wed Mar 30 2022 jsbsan <jusabejusabe@gmail.com> 0.0.39
 - agregado tambien #¡VALOR!" para que no incluya el dato
 
