@@ -5,7 +5,7 @@
   Icon = Picture["icono aplicacion.png"]
   Arrangement = Arrange.Fill
   { VBox1 VBox
-    MoveScaled(0,3,154,69)
+    MoveScaled(1,0,154,84)
     { Panel1 Panel
       MoveScaled(0,0,153,18)
       { ButtonPegarDatos Button
@@ -113,6 +113,20 @@
         Font = Font["+2"]
         Text = ("Solo coger datos de un dia")
         Value = CheckBox.True
+      }
+      { Panel2 Panel
+        MoveScaled(95,10,56,7)
+        { RadioButtonLecturas RadioButton
+          MoveScaled(3,0,20,7)
+          Font = Font["+2"]
+          Text = ("Lecturas")
+          Value = True
+        }
+        { RadioButtonMedidas RadioButton
+          MoveScaled(29,0,22,7)
+          Font = Font["+2"]
+          Text = ("Medidas")
+        }
       }
     }
     { Splitter1 Splitter

@@ -223,7 +223,12 @@ Public Sub ButtonGenerar_Click()
 
   For a = iniciardatos To GridViewDestino.rows.count - 1
     agregar = True
-    lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";" & GridViewDestino[a, 2].text 'for windows
+    If RadioButtonLecturas.Value = True Then
+      lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";" & GridViewDestino[a, 2].text 'for windows
+    Else
+      'radiobuttonmdedidas.value=true
+      lineas = GridViewDestino[a, 0].text & ";" & GridViewDestino[a, 1].text & ";;" & GridViewDestino[a, 2].text 'for windows
+    Endif
     'comprobacion de lineas con finales en ;0 ;,00 ;0,00
     If CheckBoxCerosFinales.Value = True Then
       If agregar = True And Right(lineas, 2) = ";0" Then agregar = False
