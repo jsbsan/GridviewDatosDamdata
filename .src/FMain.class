@@ -255,11 +255,17 @@ Public Sub ButtonGenerar_Click()
 
     Endif
 
+    'añadir un comentario a la linea de datos si los hay:
+    If TextBoxComentario.Text <> "" Then
+      lineas &= ";;;;" & TextBoxComentario.Text'ver manual Damdata, pagina 8 del manual modulo "Lectura Manuales"
+    Endif
+
     If agregar = True Then
       contenido &= lineas & gb.CrLf
       Try FechaAnterior = Mid$(lineas, 1, InStr(lineas, ";", 1) - 1)
       If Error Then FechaAnterior = "" 'por si llega al final y se encuentra que la linea a añadir esta vacia
     Endif
+
   Next
   ''0.0.34:
   Clipboard.Copy(contenido)

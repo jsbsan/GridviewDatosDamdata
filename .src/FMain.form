@@ -7,11 +7,13 @@
   { VBox1 VBox
     MoveScaled(1,0,154,84)
     { Panel1 Panel
-      MoveScaled(0,0,153,18)
+      MoveScaled(0,0,153,20)
       { ButtonPegarDatos Button
         MoveScaled(11,6,26,4)
+        Visible = False
+        Font = Font["-3"]
         ToolTip = ("fecha, columnas nombre sensor, dato")
-        Text = ("Pegar Datos")
+        Text = ("Pegar Datos: Fecha, nombre sensor, dato")
         Picture = Picture["icon:/22/paste"]
       }
       { ButtonGenerar Button
@@ -57,7 +59,7 @@
         MoveScaled(96,2,14,2)
       }
       { ButtonLimpiar Button
-        MoveScaled(1,1,9,8)
+        MoveScaled(0,1,9,8)
         Font = Font["-2"]
         Text = ("limpiar")
         Picture = Picture["icon:/22/clear"]
@@ -79,10 +81,10 @@
         Text = ("Con Cabecera")
       }
       { ButtonPegarSinColumnasSensores Button
-        MoveScaled(11,1,26,4)
-        Font = Font["-2"]
+        MoveScaled(9,1,28,5)
+        Font = Font["-3"]
         ToolTip = ("fecha,dato [1 fila contiene nombre sensores]")
-        Text = ("Pegar Sin Columnas Sensores")
+        Text = ("Pegar Fila1 contiene nombre Sensores")
         Picture = Picture["PegarEspecialSinColumnasSensores22.png"]
       }
       { ButtonAyuda Button
@@ -103,19 +105,21 @@
         Text = (":")
       }
       { CheckBoxCerosFinales CheckBox
-        MoveScaled(10,11,41,6)
+        MoveScaled(2,10,41,5)
         Font = Font["+2"]
+        ToolTip = ("en Precipitacion NO hay que eliminar estos datos")
         Text = ("Eliminar lineas con ceros finales")
         Value = CheckBox.True
       }
       { CheckBoxDatosDiarios CheckBox
-        MoveScaled(55,11,41,6)
+        MoveScaled(2,15,35,3)
         Font = Font["+2"]
+        ToolTip = ("inserta solo el dato que apareca en primer lugar de los que tenga un dia")
         Text = ("Solo coger datos de un dia")
         Value = CheckBox.True
       }
       { Panel2 Panel
-        MoveScaled(95,10,56,7)
+        MoveScaled(112,10,40,7)
         { RadioButtonLecturas RadioButton
           MoveScaled(3,0,20,7)
           Font = Font["+2"]
@@ -123,9 +127,20 @@
           Value = True
         }
         { RadioButtonMedidas RadioButton
-          MoveScaled(29,0,22,7)
+          MoveScaled(24,0,22,7)
           Font = Font["+2"]
           Text = ("Medidas")
+        }
+      }
+      { Frame1 Frame
+        MoveScaled(57,10,52,8)
+        Alignment = Align.Left
+        { TextBoxComentario TextBox
+          MoveScaled(2,4,48,3)
+        }
+        { Label3 Label
+          MoveScaled(2,0,47,4)
+          Text = ("Poner Comentarios al final de linea de datos::")
         }
       }
     }

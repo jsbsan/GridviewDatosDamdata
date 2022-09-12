@@ -136,3 +136,10 @@ Public Sub ButtonGenerarScript_Click()
   Next
 
 End
+
+Public Sub Form_Show()
+
+  'cada ve que muestro el formulario genero el script
+  ButtonGenerarScript_Click()
+
+End
