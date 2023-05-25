@@ -2,6 +2,7 @@
 
 { Form Form
   MoveScaled(0,0,123,64)
+  Icon = Picture["icono aplicacion.png"]
   { ButtonPegar Button
     MoveScaled(1,2,52,12)
     Text = ("SuperScript: Genera del contenido todos los .csv\nOpciones por defecto: \n-Elimina datos 0,00\n-Solo coge un dato por dia\n-Hora Asignada: 08:00:00")
@@ -9,7 +10,7 @@
   }
   { PictureBox1 PictureBox
     MoveScaled(3,32,51,30)
-    Picture = Picture["FormatoReconocidoOriginal (copia).png"]
+    Picture = Picture.Load("FormatoReconocidoOriginal (copia).png")
     Stretch = True
   }
   { Label1 Label
