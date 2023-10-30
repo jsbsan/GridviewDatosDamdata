@@ -174,7 +174,7 @@ Public Sub ButtonOperar_Click()
           If Len(GridViewOrigen[a, 0].text) = Len("00/00/0000") Then
             Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text & " " & TextBoxHora.text 'solo tiene  fecha.
           Else
-            Message.Info("Hay un error en la fecha:" & GridViewOrigen[a, 0].text)
+            Message.Info("Hay un error en la fecha:" & GridViewOrigen[a, 0].text & "\n Linea Aproximada: " & Str$(a))
           Endif
         Else
           Try GridViewDestino[a, 0].Text = GridViewOrigen[a, 0].text
