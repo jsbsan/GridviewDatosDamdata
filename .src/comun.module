@@ -7,3 +7,25 @@ Public Function espar(a As Integer) As Boolean
   Return False
 
 End
+
+Public Function comprobarfecha(a As String) As String
+  'el formato de la fecha debe de ser dd/mm/AA
+
+  'si el formato es AAAA/dd/mm -> cambiarlo
+  Dim re As RegExp
+
+  re = New RegExp(Replace(a, "-", "/"), "([0-9][0-9][0-9][0-9])/([0-9][0-9])/([0-9][0-9])")
+
+  If re.count = 3 Then
+    'parece que es una expresion aaaa/mm/dd
+    a = Mid$(a, 9, 2) & "/" & re[2].text & "/" & re[1].text
+    Return a
+  Else
+    'no es la expresion aaaa/mm/dd
+    Return a
+  Endif
+
+  'referencia: https://cursogambas.blogspot.com/2015/04/uso-de-expresiones-regulares-en-gambas.html
+  Return a
+
+End

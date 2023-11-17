@@ -368,7 +368,9 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
       For a = 0 To token.count - 1
         'si la es 0, es la fecha, no añadir nada
         If a = 0 Then
-          contenidoMejorado &= token[0]
+
+          contenidoMejorado &= comun.comprobarfecha(token[0])
+
         Else
           If token[0] = "" Then Continue
           contenidoMejorado &= "\t" & listaCabeceras[a] & "\t" & token[a]

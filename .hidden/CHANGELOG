@@ -1,3 +1,6 @@
+* Fri Nov 17 2023 jsbsan <jusabejusabe@gmail.com> 0.0.45
+- Admite formato YYYY/MM/DD, e internamente lo pasa a DD/MM/YYYY, usando expresiones regulares
+
 * Mon Oct 30 2023 jsbsan <jusabejusabe@gmail.com> 0.0.44
 - indica linea aproximada donde hay un fallo en la fecha
 
