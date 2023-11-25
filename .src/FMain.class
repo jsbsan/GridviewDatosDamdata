@@ -351,6 +351,12 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
     contenido = Clipboard.Paste("text/plain")
     contenido = Replace(contenido, " 00:00", "") 'por si poen la toma de datos
     contenido = Replace(contenido, " 0:00", "") 'por si poen la toma de datos
+
+    If InStr(contenido, ".") <> 0 And InStr(contenido, ",") <> 0 Then
+      Message("ERROR en datos leidos:\nEs posible que halla numeros  con separadores de millares. Solo se aceptan numeros sin separador de millar y coma decimal")
+      Return
+    Endif
+
     LINEAS = Split(CONTENIDO, "\n")
 
     contador = -1

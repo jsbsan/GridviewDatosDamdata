@@ -1,3 +1,6 @@
+* Mon Nov 20 2023 jsbsan <jusabejusabe@gmail.com> 0.0.46
+- agregada comprobacion de tener numeros con separadores de millar con punto a la vez que con coma para los decimales. Solo se admiten numeros con separador de coma para los decimales.
+
 * Fri Nov 17 2023 jsbsan <jusabejusabe@gmail.com> 0.0.45
 - Admite formato YYYY/MM/DD, e internamente lo pasa a DD/MM/YYYY, usando expresiones regulares
 
