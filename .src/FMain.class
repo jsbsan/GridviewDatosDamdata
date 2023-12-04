@@ -357,6 +357,12 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
       Return
     Endif
 
+    If InStr(Upper$(contenido), "LLUVIAS") <> 0 Or InStr(Upper$(contenido), "-TPM-P") <> 0 Then
+      'POSIBLE CAMPO DE PRECIPITACIONES,
+      CheckBoxCerosFinales.VALUE = False
+
+    Endif
+
     LINEAS = Split(CONTENIDO, "\n")
 
     contador = -1
