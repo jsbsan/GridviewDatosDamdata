@@ -1,3 +1,6 @@
+* Mon Dec 04 2023 jsbsan <jusabejusabe@gmail.com> 0.0.48
+- comprobacion de punto o coma decimal sin analizar la primera linea que es la que contiene los nombre de los sensores
+
 * Mon Dec 04 2023 jsbsan <jusabejusabe@gmail.com> 0.0.47
 - DETECTA SI HAY CAMPO DE LLUVIAS O -TPM-P (DE PRECIPITACIONES) PARA QUITAR EL CHECK DATOS EN COLUMNAS 0
 

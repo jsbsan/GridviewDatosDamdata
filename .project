@@ -2,7 +2,7 @@
 Title=GridviewDatosDamdata
 Startup=FormMiniVisor
 Icon=icono aplicacion.png
-Version=0.0.47
+Version=0.0.48
 Component=gb.image
 Component=gb.gui
 Component=gb.form
@@ -20,7 +20,7 @@ Maintainer=jsbsan
 Address=jusabejusabe@gmail.com
 Url=https://jsbsan.blogspot.com/
 License=General Public License
-PackageName=gridviewdatosdamdata-0.0.47
+PackageName=gridviewdatosdamdata-0.0.48
 CreateEachDirectory=1
 Packager=1
 Systems=debian
