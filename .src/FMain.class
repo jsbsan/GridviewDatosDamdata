@@ -372,7 +372,8 @@ Public Sub ButtonPegarSinColumnasSensores_Click()
       'POSIBLE CAMPO DE PRECIPITACIONES,
       CheckBoxCerosFinales.VALUE = False
     Else
-      CheckBoxCerosFinales.VALUE = True
+      'quito esta linea, porque puede ser que tenga ceros y no sea la variable de lluvias
+      '  CheckBoxCerosFinales.VALUE = True
 
     Endif
 
